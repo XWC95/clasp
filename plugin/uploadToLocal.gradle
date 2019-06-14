@@ -1,0 +1,9 @@
+apply plugin: 'maven'
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri('D://repo'))
+        pom.groupId = 'com.vea.clasp'
+        pom.artifactId = 'plugin'
+        pom.version = '1.0.0'
+    }
+}

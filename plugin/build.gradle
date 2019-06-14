@@ -1,0 +1,17 @@
+apply plugin: 'java-gradle-plugin'
+apply from: "uploadToLocal.gradle"
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile "com.android.tools.build:gradle:$android_tools_version"
+    compile "com.vea.clasp:api:1.0.0"
+    testImplementation 'junit:junit:4.12'
+}
+
+gradlePlugin {
+    plugins {
+        capt {
+            id = 'clasp'
+            implementationClass = 'com.vea.clasp.plugin.GradleCaptPlugin'
+        }
+    }
+}

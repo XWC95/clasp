@@ -1,0 +1,12 @@
+apply plugin: 'java-library'
+apply from: "uploadToLocal.gradle"
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly "com.google.code.findbugs:jsr305:3.0.2"
+    compile "com.squareup.okio:okio:$okio_version"
+    compile "org.ow2.asm:asm:$asm_version"
+    compile "org.ow2.asm:asm-tree:$asm_version"
+    compile "com.google.code.gson:gson:$gson_version"
+    compileOnly gradleApi()
+    compileOnly "com.android.tools.build:gradle:$android_tools_version"
+}
